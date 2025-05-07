@@ -1,0 +1,237 @@
+:root{
+    --white: white;
+    --skyblue: skyblue;   
+}
+
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+}
+
+/*HEADER*/
+
+header nav{
+    width: 100%;
+    height: 10vh;
+    background-color: var(--skyblue);
+    border-bottom: 0.2rem solid black;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav h1{
+    margin-left: 20px;
+    margin-right: 20px;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+nav h1:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    border-right: solid 2px black;
+}
+
+nav ul li:last-child{
+    border-right: none;
+}
+
+nav ul li a {
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+nav ul li a:hover {
+    color: var(--white);
+    transition: 0.3s;
+}
+
+nav ul li img{
+    display: none;
+}
+
+.drawer {
+    color: var(--white-text);
+    float: left;
+    cursor: pointer;
+    display: none;
+    margin-left: 1rem;
+    border: solid 0.1rem var(--white-text);
+    padding: 0.2rem;
+    border-radius: 0.1rem;
+}
+
+#ckbox {
+    display: none;
+}
+
+/*CONTENIDO*/
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+main h1{
+    text-align: center;
+    margin: 1.5rem;
+    font-size: 5rem;
+}
+main h2{
+    text-align: center;
+    color: var(--skyblue);
+    margin: 1.5rem;
+    font-size: 3rem;
+}
+main form{
+    display: flex;
+    justify-content: center;
+}
+
+main form button{
+    margin: 0 0.5rem;
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.sobre-mi{
+    background-color: skyblue;
+    color: white;
+    border: solid 0.1rem;
+}
+
+.sobre-mi:hover{
+    transition: 0.3s;
+    background-color: white;
+    color: skyblue;
+}
+
+.contacto{
+    background-color: skyblue;
+    color: white;
+    border: solid 0.1rem;
+}
+
+.contacto:hover{
+    background-color: white;
+    color: skyblue;
+    transition: 0.3s;
+}
+
+.foto{
+    display: flex;
+    border-radius: 50%;
+    background-color: skyblue;
+}
+
+main span img{
+    width: 250px;
+    height: 300px;
+    display: none;
+}
+
+/*FOOTER*/
+
+footer{
+    height: 10vh;
+    background-color: skyblue;
+    border-top: solid 0.2rem black;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+footer ul{
+    display: flex;
+}
+
+footer img{
+    width: 2rem;
+    height: 2rem;
+}
+
+footer img:hover{
+    transition: 0.3s;
+    filter: invert(100%) hue-rotate(90deg);
+}
+
+footer ul li{
+    border-right: solid 2px black;
+}
+
+footer ul li:last-child{
+    border-right: none;
+}
+
+footer ul li a {
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+}
+
+footer p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media(max-width:700px) {
+    nav {
+        justify-content: flex-start;
+    }
+    .drawer {
+        display: block;
+    }
+    nav h1 {
+        margin-left: 1rem;
+    }
+    ul {
+        position: fixed;
+        width: 40%;
+        height: 100vh;
+        background-color: whitesmoke;
+        top: 10vh;
+        left: -100%;
+        text-align: left;
+        transition: all 0.5s;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+    }
+    nav ul li {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        border-bottom: solid .1rem rgba(201, 196, 196, 0.4);
+    }
+    #ckbox:checked~.menu-box {
+        left: 0;
+    }
+    .image {
+        display: none;
+    }
+    footer {
+        text-align: center;
+    }
+}
