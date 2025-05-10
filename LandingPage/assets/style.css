@@ -33,6 +33,7 @@ header nav h1{
     margin-right: 20px;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
+    color: #000;
 }
 nav h1:hover{
     color: white;
@@ -83,13 +84,14 @@ nav ul li img{
     display: none;
 }
 
-/*CONTENIDO*/
+/*CONTENIDO INDEX*/
 
 main{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
+    flex-wrap: wrap;
 }
 
 main h1{
@@ -151,6 +153,94 @@ main span img{
     display: none;
 }
 
+/*CONTENIDO PROYECTOS*/
+.card {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 20px;
+}
+
+.card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: 0.5s;
+    border: 0.2rem solid skyblue;
+    border-radius: 20px;
+}
+
+.card .front{
+    transform:perspective(600px)rotateY(0deg);
+}
+
+.card .front img{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 20%;
+    left: 25%;
+}
+
+.card .front h3{
+    position: absolute;
+    bottom: 0px;
+    height: 25%;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    color: skyblue;
+    font-size: 1rem;
+}
+
+.card .back{
+    transform: perspective(600px)rotateY(180deg);
+    background: skyblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.card .back h3{
+    color: white;
+    font-size: 1rem;
+}
+
+.card .back p{
+    color: white;
+    font-size: 0.8rem;
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+.card .link a{
+    color: skyblue;
+    font-size: 0.8rem;
+    align-items: flex-end;
+    justify-content: end;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    background: white;
+}
+
+.card:hover .front{
+    transform:perspective(600px)rotateY(180deg);
+}
+
+.card:hover .back{
+    transform:perspective(600px)rotateY(0deg);
+}
+
+.card .link a:hover{
+    transition: 0.5s;
+    background: skyblue;
+    color: white;
+}
+
 /*FOOTER*/
 
 footer{
@@ -209,7 +299,7 @@ footer p{
         position: fixed;
         width: 40%;
         height: 100vh;
-        background-color: whitesmoke;
+        background: white;
         top: 10vh;
         left: -100%;
         text-align: left;
@@ -219,11 +309,12 @@ footer p{
         align-content: stretch;
     }
     nav ul li {
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         display: flex;
         flex-direction: column;
         padding-left: 1rem;
-        border-bottom: solid .1rem rgba(201, 196, 196, 0.4);
+        border: 0;
+        border-bottom: solid 0.1rem rgba(201, 196, 196, 0.5);
     }
     #ckbox:checked~.menu-box {
         left: 0;
